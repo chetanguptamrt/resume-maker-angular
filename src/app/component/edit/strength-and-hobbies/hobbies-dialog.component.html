@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Hobbies</h2>
+<div mat-dialog-content>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Hobbies</mat-label>
+        <input matInput [(ngModel)]="hobbies" name="hobbies" placeholder="For eg: Playing Badminton" value="" required>
+    </mat-form-field>        
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button [mat-dialog-close]="hobbies" color="primary" cdkFocusInitial >Add</button>
+</div>

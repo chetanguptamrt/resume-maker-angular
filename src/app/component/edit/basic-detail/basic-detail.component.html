@@ -1,0 +1,48 @@
+<div class="p-3 box-container">
+    <div class="text-center">
+        <img style="width:120px; height: 120px; object-fit: cover; border-radius: 50%;" [src]="imagePath" alt="profile_pic">
+    </div>
+    
+    <mat-label>Upload your photo</mat-label>
+    <div class="mt-2 mb-3">
+        <input type="file" (change)="gotPhoto($event.target)" value="" accept="image/*" >
+    </div>
+    
+    <form (ngSubmit)="submit()">
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput [(ngModel)]="basicDetail.name" name="name" placeholder="John Smith" value="" required>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Mobile No.</mat-label>
+            <input matInput [(ngModel)]="basicDetail.mobile" name="mobile" placeholder="+91 9876543210" value="" required>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="basicDetail.email" name="email" placeholder="john@example.com" value="" required>
+        </mat-form-field>
+        
+        <div class="mt-2 mb-2">
+            <mat-label>Social Links: <small style="color: green;">(you can add only 3 links)</small></mat-label>
+            <mat-icon (click)="openDialog()" class="circle-add-icon" aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+        </div>
+        <div class="mb-2" >
+            <small *ngIf="basicDetail.socialLinks.length==0" style="color: grey;">No social link</small>
+            <div *ngIf="basicDetail.socialLinks.length!=0">
+                <div *ngFor="let socialLink of basicDetail.socialLinks">
+                    <mat-label class="socialLinkBreak"><span style="font-weight: 500;">{{socialLink.account}}</span> : <span style="color: blue;">{{socialLink.link}}</span></mat-label>
+                    <mat-icon (click)="deleteSocialLink(socialLink)" aria-hidden="false" class="delete-item" aria-label="Example home icon">delete</mat-icon>
+                </div>
+            </div>
+        </div>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Career Objective</mat-label>
+            <textarea class="resize-none" [(ngModel)]="basicDetail.careerObjective" name="careerObjective" matInput placeholder="" value="" required rows="10"></textarea>
+        </mat-form-field>
+
+        <div class="text-center">
+            <button type="submit" mat-raised-button color="primary">Update</button> &nbsp;
+            <button type="reset" mat-raised-button color="accent">Reset</button>
+        </div>
+    </form>
+</div>

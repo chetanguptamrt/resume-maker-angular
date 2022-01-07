@@ -1,0 +1,28 @@
+.menu{
+    border: 1px solid rgb(220, 220, 220);
+}
+.menu-list{
+    display: block;
+    padding: 15px;
+}
+.menu-list:hover{
+    background-color: rgb(240,240,240);
+}
+.menu2{
+    display: none;
+}
+.menu2-list{
+    display: block;
+    padding: 10px;
+}
+.menu2-list:hover{
+    background-color: rgb(240,240,240);
+}
+@media only screen and (max-width:768px) {
+    .menu{
+        display: none;
+    }
+    .menu2{
+        display: contents;
+    }
+}

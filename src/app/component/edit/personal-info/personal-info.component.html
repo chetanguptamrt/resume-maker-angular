@@ -1,0 +1,82 @@
+<div class="p-3 box-container">
+    <form (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Current Location</mat-label>
+                    <input matInput [(ngModel)]="personalInfo.currentLocation" name="currentLocation" placeholder="For eg: Meerut" value="">
+                  </mat-form-field>
+            </div>
+            <div class="col-sm-6 col-12">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Hometown</mat-label>
+                    <input matInput [(ngModel)]="personalInfo.hometown" name="hometown" placeholder="For eg: Meerut" value="">
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Date of Birth</mat-label>
+                    <input [(ngModel)]="personalInfo.dateOfBirth" name="dateOfBirth" matInput [matDatepicker]="picker" placeholder="01/01/2000">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-6 col-12">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Gender</mat-label>
+                    <mat-select [(ngModel)]="personalInfo.gender" name="gender" matNativeControl>
+                        <mat-option value="">Not Prefer</mat-option>
+                        <mat-option value="male">Male</mat-option>
+                        <mat-option value="female">Female</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Married</mat-label>
+                    <mat-select [(ngModel)]="personalInfo.married" name="married" matNativeControl>
+                        <mat-option value="">Not Prefer</mat-option>
+                        <mat-option value="yes">Yes</mat-option>
+                        <mat-option value="no">No</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-6 col-12">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Language Known</mat-label>
+                    <input [(ngModel)]="personalInfo.languageKnown" name="languageKnown" matInput placeholder="For eg: English, Japnese" value="">
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Looking for a</mat-label>
+                    <input [(ngModel)]="personalInfo.lookingForA" name="lookingForA" matInput placeholder="For eg: Job, Internship" value="">
+                  </mat-form-field>
+            </div>
+            <div class="col-sm-6 col-12">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Can start work</mat-label>
+                    <input [(ngModel)]="personalInfo.canStartWork" name="canStartWork" matInput placeholder="For eg: Immediately" value="">
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Prefered Location</mat-label>
+                    <input [(ngModel)]="personalInfo.preferedLocation" name="preferedLocation" matInput placeholder="For eg: Noida, Delhi" value="">
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" mat-raised-button color="primary">Update</button> &nbsp;
+            <button type="reset" mat-raised-button color="accent">Reset</button>
+        </div>
+    </form>
+</div>

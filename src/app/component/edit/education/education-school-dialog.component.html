@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>School</h2>
+<div mat-dialog-content>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="data.name" name="name" placeholder="For eg: HighSchool, Intermediate" required value="" >
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>School Name</mat-label>
+        <input matInput [(ngModel)]="data.schoolName" name="schoolName" placeholder="XYZ inter college" value="" required>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Board</mat-label>
+        <input matInput [(ngModel)]="data.board" name="board" placeholder="For eg: UP Board, CBSC Board" value="" required>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Passing Year</mat-label>
+        <input matInput [(ngModel)]="data.passingYear" name="passingYear" placeholder="2018" value="" required>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Score</mat-label>
+        <input matInput [(ngModel)]="data.score" name="score" placeholder="80%" value="" required>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button [mat-dialog-close]="data" color="primary" cdkFocusInitial >Add</button>
+</div>

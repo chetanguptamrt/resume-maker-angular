@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Strength</h2>
+<div mat-dialog-content>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Strength</mat-label>
+        <input matInput placeholder="For eg: Optimistic" [(ngModel)]="strength" name="strength" value="" required>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button [mat-dialog-close]="strength" color="primary" cdkFocusInitial >Add</button>
+</div>

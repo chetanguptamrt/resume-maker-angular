@@ -1,0 +1,41 @@
+<div class="p-3 box-container">
+    <div class="mt-2 mb-2">
+        <mat-label>School:</mat-label>
+        <mat-icon (click)="openSchoolDialog()" class="circle-add-icon" aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+    </div>
+    <div class="mb-3">
+        <small *ngIf="education.school.length==0" style="color: grey;">No school</small>
+        <div *ngIf="education.school.length!=0">
+            <div *ngFor="let school of education.school">
+                <mat-label><span style="font-weight: 500;">{{school.name}}</span></mat-label>
+                <mat-icon (click)="deleteSchool(school)" aria-hidden="false" class="delete-item" aria-label="Example home icon">delete</mat-icon><br>
+                <mat-label><span style="font-weight: 500;">School Name :</span> {{school.schoolName}}</mat-label><br>
+                <mat-label><span style="font-weight: 500;">Board Name :</span> {{school.board}}</mat-label><br>
+                <mat-label><span style="font-weight: 500;">Passing Year :</span> {{school.passingYear}}</mat-label><br>
+                <mat-label><span style="font-weight: 500;">Score :</span> {{school.score}}</mat-label><br>
+            </div>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="mt-2 mb-2">
+        <mat-label>College:</mat-label>
+        <mat-icon (click)="openCollegeDialog()" class="circle-add-icon" aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+    </div>
+    <div class="mb-2">
+        <small *ngIf="education.college.length==0" style="color: grey;">No college</small>
+        <div *ngIf="education.college.length!=0">
+            <div *ngFor="let college of education.college">
+                <mat-label><span style="font-weight: 500;">{{college.courseName}}</span></mat-label>
+                <mat-icon (click)="deleteCollege(college)" aria-hidden="false" class="delete-item" aria-label="Example home icon">delete</mat-icon><br>
+                <mat-label><span style="font-weight: 500;">School Name :</span> {{college.collegeName}}</mat-label><br>
+                <mat-label><span style="font-weight: 500;">Passing Year :</span> {{college.passingYear}}</mat-label><br>
+                <mat-label><span style="font-weight: 500;">Score :</span> {{college.score}}</mat-label><br>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <button type="submit" mat-raised-button color="primary" (click)="updateEducation()">Update</button> &nbsp;
+        <button type="reset" mat-raised-button color="accent" (click)="deleteEducation()">Delete</button>
+    </div>
+</div>

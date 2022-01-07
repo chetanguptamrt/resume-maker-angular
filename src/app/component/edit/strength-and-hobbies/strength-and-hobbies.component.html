@@ -1,0 +1,36 @@
+<div class="p-3 box-container">
+    <div class="mt-2 mb-2">
+        <mat-label>Strengths: <small style="color: green;">(you can add only 5 strength)</small></mat-label>
+        <mat-icon class="circle-add-icon" (click)="openStrengthDialog()" aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+    </div>
+    <div class="mb-3" >
+        <small *ngIf="strengthAndHobbies.strengths.length==0" style="color: grey;">No strengths</small>
+        <div *ngIf="strengthAndHobbies.strengths.length!=0">
+            <div *ngFor="let strength of strengthAndHobbies.strengths">
+                <mat-label>{{strength}}</mat-label>
+                <mat-icon (click)="deleteStrength(strength)" aria-hidden="false" class="delete-item" aria-label="Example home icon">delete</mat-icon>
+            </div>
+        </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="mt-2 mb-2">
+        <mat-label>Hobbies: <small style="color: green;">(you can add only 3 hobbies)</small></mat-label>
+        <mat-icon class="circle-add-icon" (click)="openHobbiesDialog()" aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+    </div>
+    <div class="mb-2" >
+        <small *ngIf="strengthAndHobbies.hobbies.length==0" style="color: grey;">No hobbies</small>
+        <div *ngIf="strengthAndHobbies.hobbies.length!=0">
+            <div *ngFor="let hobbies of strengthAndHobbies.hobbies">
+                <mat-label>{{hobbies}}</mat-label>
+                <mat-icon (click)="deleteHobbies(hobbies)" aria-hidden="false" class="delete-item" aria-label="Example home icon">delete</mat-icon>
+            </div>
+        </div>
+    </div>
+    
+    <div class="text-center">
+        <button type="submit" mat-raised-button color="primary" (click)="updateData()">Update</button> &nbsp;
+        <button type="submit" mat-raised-button color="accent" (click)="deleteData()">Delete</button>
+    </div>
+</div>

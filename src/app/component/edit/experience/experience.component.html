@@ -1,0 +1,22 @@
+<div class="p-3 box-container">
+    <div class="mt-2 mb-2">
+        <mat-label>Experience:</mat-label>
+        <mat-icon (click)="openDialog()" class="circle-add-icon" aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+    </div>
+    <div class="mb-2" >
+        <small *ngIf="experiences.experiences.length==0" style="color: grey;">No experience</small>
+        <div *ngIf="experiences.experiences.length!=0">
+            <div *ngFor="let experience of experiences.experiences">
+                <mat-label><span style="font-weight: 500;">{{experience.companyName}}</span></mat-label>
+                <mat-icon (click)="deleteExperience(experience)" aria-hidden="false" class="delete-item" aria-label="Example home icon">delete</mat-icon><br>
+                <mat-label><span style="font-weight: 500;">Job Profile :</span> {{experience.companyName}}</mat-label><br>
+                <mat-label><span style="font-weight: 500;">Year of Experience :</span> {{experience.yearOfExperience}}</mat-label>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <button type="submit" mat-raised-button color="primary" (click)="updateExperience()">Update</button> &nbsp;
+        <button type="reset" mat-raised-button color="accent"  (click)="deleteExperiences()">Delete</button>
+    </div>
+</div>

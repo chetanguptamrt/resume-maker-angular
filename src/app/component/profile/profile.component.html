@@ -1,0 +1,25 @@
+<div class="container mt-2 mb-2">
+    <div class="text-center">
+        <h2 >My Profile</h2>
+        <img style="width:120px; height: 120px; object-fit: cover; border-radius: 50%;" [src]="imagePath" alt="profile_pic">
+        <h3 *ngIf="basicDetail.name">{{basicDetail.name}}</h3>
+    </div>
+    <p *ngIf="basicDetail.careerObjective">{{basicDetail.careerObjective}}</p>
+
+    <div *ngIf="basicDetail.mobile">
+        <label class="socialLinkBreak" style="font-weight: 500;">Mobile No: </label>
+        <a class="socialLinkBreak" href="tel:{{basicDetail.mobile}}" target="_blank">{{basicDetail.mobile}}</a> <br>    
+    </div>
+    <div *ngIf="basicDetail.email">
+        <label class="socialLinkBreak" style="font-weight: 500;">Email: </label>
+        <a class="socialLinkBreak" href="mailto:{{basicDetail.email}}" target="_blank">{{basicDetail.email}}</a> <br>    
+    </div>
+    
+    <div class="mt-2" *ngIf="basicDetail.socialLinks.length!=0">
+        <label style="font-weight: 500; font-size: large;">Social Links</label>
+        <div *ngFor="let socialLink of basicDetail.socialLinks">
+            <label class="socialLinkBreak"><span style="font-weight: 500;">{{socialLink.account}}</span>: </label>
+            <a class="socialLinkBreak" href="{{socialLink.link}}" target="_blank">{{socialLink.link}}</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.text-decoration-none{
+    text-decoration: none;
+}
+.text-center{
+    text-align: center;
+}
+.text-dark{
+    color: black;
+}
+.full-width{
+    width: 100%;
+}
+.circle-add-icon {
+    position: relative;
+    top: 7px;
+    left: 5px;
+    background-color: black;
+    color: white; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+.delete-item{
+    color: crimson;
+    position: relative;
+    top: 7px;
+    cursor: pointer;
+}
+@media only screen and (max-width:500px){
+    .box-container{
+        padding: 0px;
+    }
+}

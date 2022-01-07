@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Experience</h2>
+<div mat-dialog-content>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Company Name</mat-label>
+        <input matInput placeholder="For eg: TCS, Wipro" [(ngModel)]="data.companyName" name="companyName" value="" required >
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Job Profile</mat-label>
+        <input matInput placeholder="For eg: Full stack developer" [(ngModel)]="data.jobProfile" name="jobProfile" value="" required >
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Year of experience</mat-label>
+        <input matInput placeholder="2 year" [(ngModel)]="data.yearOfExperience" name="yearOfExperience" value="" required >
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button [mat-dialog-close]="data" color="primary" cdkFocusInitial >Add</button>
+</div>

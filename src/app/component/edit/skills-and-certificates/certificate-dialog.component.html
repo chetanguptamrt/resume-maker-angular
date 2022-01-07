@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Certificates</h2>
+<div mat-dialog-content>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Certificate</mat-label>
+        <textarea matInput [(ngModel)]="data.certificate" name="certificate" placeholder="Certification of Achievement in ‘XYZ’ from XYZ Pvt Ltd." value="" required></textarea>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button [mat-dialog-close]="data" color="primary" cdkFocusInitial >Add</button>
+</div>

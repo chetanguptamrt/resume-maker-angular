@@ -1,0 +1,24 @@
+<div class="p-3 box-container">
+    <div class="mt-2 mb-2">
+        <mat-label>Projects:</mat-label>
+        <mat-icon (click)="openDialog()" class="circle-add-icon" aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+    </div>
+    <div class="mb-2" >
+        <small *ngIf="projects.projects.length==0" style="color: grey;">No project</small>
+        <div *ngIf="projects.projects.length!=0">
+            <div *ngFor="let project of projects.projects">
+                <mat-label>{{project.name}}</mat-label>
+                <mat-icon (click)="deleteProject(project)" aria-hidden="false" class="delete-item" aria-label="Example home icon">delete</mat-icon> <br>
+                <mat-label><span style="font-weight: 500;">Associated with : </span>{{project.associated}}</mat-label><br>
+                <mat-label><span style="font-weight: 500;">Date : </span>{{project.date}}</mat-label><br>
+                <mat-label><span style="font-weight: 500;">Description : </span>{{project.description}}</mat-label>
+            </div>
+        </div>
+    </div>
+        
+    <div class="text-center">
+        <button type="submit" mat-raised-button color="primary" (click)="updateData()">Update</button> &nbsp;
+        <button type="reset" mat-raised-button color="accent" (click)="deleteData()">Delete</button>
+    </div>
+    
+</div>

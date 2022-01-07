@@ -1,0 +1,33 @@
+<div class="p-3 box-container">
+    <div class="mt-2 mb-2">
+        <mat-label>Skills: <small style="color: green;">(you can add only 5 Skills)</small></mat-label>
+        <mat-icon (click)="openSkillDialog()" class="circle-add-icon" aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+    </div>
+    <div class="mb-3">
+        <small *ngIf="skillAndCertificate.skills.length==0" style="color: grey;">No skills</small>
+        <div *ngIf="skillAndCertificate.skills.length!=0">
+            <div *ngFor="let skill of skillAndCertificate.skills">
+                <mat-label><span style="font-weight: 500;">{{skill.skillName}}</span> : {{skill.skills}}</mat-label>
+                <mat-icon (click)="deleteSkill(skill)" aria-hidden="false" class="delete-item" aria-label="Example home icon">delete</mat-icon><br>
+            </div>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="mt-2 mb-2">
+        <mat-label>Certificates<small style="color: tomato;">(If fresher)</small>: <small style="color: green;">(you can add only 5 Certificates)</small></mat-label>
+        <mat-icon (click)="openCertificateDialog()" class="circle-add-icon" aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+    </div>
+    <div class="mb-2">
+        <small *ngIf="skillAndCertificate.certificates.length==0" style="color: grey;">No certificates</small>
+        <div *ngIf="skillAndCertificate.certificates.length!=0">
+            <div *ngFor="let certificate of skillAndCertificate.certificates">
+                <mat-label><span style="font-weight: 500;">{{certificate.certificate}}</span></mat-label>
+                <mat-icon (click)="deleteCertificate(certificate)" aria-hidden="false" class="delete-item" aria-label="Example home icon">delete</mat-icon><br>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <button type="submit" mat-raised-button color="primary" (click)="updateData()">Update</button>
+    </div>
+</div>

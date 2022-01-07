@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>College</h2>
+<div mat-dialog-content>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Course Name</mat-label>
+        <input matInput [(ngModel)]="data.courseName" name="courseName" placeholder="For eg: BCA, MCA" value="" required>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>College Name</mat-label>
+        <input matInput [(ngModel)]="data.collegeName" name="collegeName" placeholder="For eg: IIT" value="" required>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Passing Year</mat-label>
+        <input matInput [(ngModel)]="data.passingYear" name="passingYear" placeholder="2021" value="" required>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Score</mat-label>
+        <input matInput [(ngModel)]="data.score" name="score" placeholder="80%" value="" required>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button [mat-dialog-close]="data" color="primary" cdkFocusInitial >Add</button>
+</div>

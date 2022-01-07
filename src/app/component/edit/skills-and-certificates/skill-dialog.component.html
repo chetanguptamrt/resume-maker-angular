@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Skill</h2>
+<div mat-dialog-content>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Skill Name</mat-label>
+        <input matInput [(ngModel)]="data.skillName" name="skillName" placeholder="For eg: Programming Language" value="" required>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Skills</mat-label>
+        <input matInput [(ngModel)]="data.skills" name="skills" placeholder="For eg: Java, Python" value="" required>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button [mat-dialog-close]="data" color="primary" cdkFocusInitial >Add</button>
+</div>

@@ -1,0 +1,42 @@
+<div class="p-0 menu">
+    <a class="text-decoration-none text-dark menu-list" routerLink="basic-detail">Basic Detail</a>
+    <mat-divider></mat-divider>
+    <a class="text-decoration-none text-dark menu-list" routerLink="personal-info">Personal Info</a>
+    <mat-divider></mat-divider>
+    <a class="text-decoration-none text-dark menu-list" routerLink="education">Education</a>
+    <mat-divider></mat-divider>
+    <a class="text-decoration-none text-dark menu-list" routerLink="skills-and-certificates">Skills & Certificates</a>
+    <mat-divider></mat-divider>
+    <a class="text-decoration-none text-dark menu-list" routerLink="experience">Experience</a>
+    <mat-divider></mat-divider>
+    <a class="text-decoration-none text-dark menu-list" routerLink="strength-hobbies">Strength & Hobbies</a>
+    <mat-divider></mat-divider>
+    <a class="text-decoration-none text-dark menu-list" routerLink="project">Project</a>
+    <mat-divider></mat-divider>
+    <a class="text-decoration-none text-dark menu-list" routerLink="declaration">Declaration</a>
+</div>
+
+<mat-accordion class="menu2">
+    <mat-expansion-panel [expanded]="toggle" (opened)="onOpenSettings()">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Settings
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <a (click)="closeSettings()" class="text-decoration-none text-dark menu2-list" routerLink="basic-detail">Basic Detail</a>
+        <mat-divider></mat-divider>
+        <a (click)="closeSettings()" class="text-decoration-none text-dark menu2-list" routerLink="personal-info">Personal Info</a>
+        <mat-divider></mat-divider>
+        <a (click)="closeSettings()" class="text-decoration-none text-dark menu2-list" routerLink="education">Education</a>
+        <mat-divider></mat-divider>
+        <a (click)="closeSettings()" class="text-decoration-none text-dark menu2-list" routerLink="skills-and-certificates">Skills & Certificates</a>
+        <mat-divider></mat-divider>
+        <a (click)="closeSettings()" class="text-decoration-none text-dark menu2-list" routerLink="experience">Experience</a>
+        <mat-divider></mat-divider>
+        <a (click)="closeSettings()" class="text-decoration-none text-dark menu2-list" routerLink="strength-hobbies">Strength & Hobbies</a>
+        <mat-divider></mat-divider>
+        <a (click)="closeSettings()" class="text-decoration-none text-dark menu2-list" routerLink="project">Project</a>
+        <mat-divider></mat-divider>
+        <a (click)="closeSettings()" class="text-decoration-none text-dark menu2-list" routerLink="declaration">Declaration</a>
+    </mat-expansion-panel>
+</mat-accordion>

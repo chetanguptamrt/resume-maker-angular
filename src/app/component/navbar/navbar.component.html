@@ -1,0 +1,23 @@
+<mat-toolbar color="primary" style="min-height: 50px; max-height: 56px;">
+    <mat-toolbar-row>
+        <img src="assets/img/logo.png" style="width: 50px;" alt="logo"> 
+        <span><a class="text-decoration-none" style="color: white" routerLink="">Resume Maker</a></span>
+        <span class="example-spacer"></span>
+        <span>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <a routerLink="profile" mat-menu-item style="max-height: 45px;">
+                    <span>Profile</span>
+                </a>
+                <a routerLink="edit" mat-menu-item style="max-height: 45px;">
+                    <span>Settings</span>
+                </a>
+                <a routerLink="print-resume" mat-menu-item style="max-height: 45px;">
+                    <span>Print Resume</span>
+                </a>
+            </mat-menu>
+        </span>
+    </mat-toolbar-row>
+</mat-toolbar>
