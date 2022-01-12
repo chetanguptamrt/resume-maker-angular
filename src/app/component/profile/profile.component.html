@@ -8,18 +8,18 @@
 
     <div *ngIf="basicDetail.mobile">
         <label class="socialLinkBreak" style="font-weight: 500;">Mobile No: </label>
-        <a class="socialLinkBreak" href="tel:{{basicDetail.mobile}}" target="_blank">{{basicDetail.mobile}}</a> <br>    
+        <a class="socialLinkBreak" href="tel:{{basicDetail.mobile}}" target="_blank"> {{basicDetail.mobile}}</a> <br>    
     </div>
     <div *ngIf="basicDetail.email">
         <label class="socialLinkBreak" style="font-weight: 500;">Email: </label>
-        <a class="socialLinkBreak" href="mailto:{{basicDetail.email}}" target="_blank">{{basicDetail.email}}</a> <br>    
+        <a class="socialLinkBreak" href="mailto:{{basicDetail.email}}" target="_blank"> {{basicDetail.email}}</a> <br>    
     </div>
     
     <div class="mt-2" *ngIf="basicDetail.socialLinks.length!=0">
         <label style="font-weight: 500; font-size: large;">Social Links</label>
         <div *ngFor="let socialLink of basicDetail.socialLinks">
-            <label class="socialLinkBreak"><span style="font-weight: 500;">{{socialLink.account}}</span>: </label>
-            <a class="socialLinkBreak" href="{{socialLink.link}}" target="_blank">{{socialLink.link}}</a>
+            <label class="socialLinkBreak"><span style="font-weight: 500;"> {{socialLink.account}}</span>: </label>
+            <a class="socialLinkBreak" href="{{socialLink.link}}" target="_blank"> {{socialLink.link}}</a>
         </div>
     </div>
 </div>

@@ -15,6 +15,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { ProfileComponent } from './component/profile/profile.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { PrintResumeComponent } from './component/print-resume/print-resume.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     HomeComponent,
     SettingComponent,
     SettingLinkComponent,
-    ProfileComponent
+    ProfileComponent,
+    PrintResumeComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, AppRoutingModule, MatToolbarModule, MatButtonModule, MatDividerModule,

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './component/home/home.component';
+import { PrintResumeComponent } from './component/print-resume/print-resume.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { SettingComponent } from './component/setting/setting.component';
 
@@ -18,6 +19,11 @@ const routes: Routes = [
   {
     path: "profile",
     component: ProfileComponent,
+    pathMatch: "full"
+  },
+  {
+    path: "print-resume",
+    component: PrintResumeComponent,
     pathMatch: "full"
   }
 ];

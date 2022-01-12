@@ -1,0 +1,168 @@
+ul{
+    padding-left: 1rem;
+    font-size: 12px;  
+}
+.text-justify{
+    text-align: justify;
+}
+.text-bold{
+    font-weight: 600;
+}
+.text-rigth{
+    text-align: right;
+}
+.font-size-16{
+    font-size: 16px;
+}
+.font-size-12{
+    font-size: 12px;
+}
+.color-custom-blue{
+    color: #32AFB2 !important;
+}
+.font-weigth-500{
+    font-weight: 500;
+}
+.color-custom-green{
+    color: #0D6784 !important;
+}
+.cover{
+    background-color: #1F497DFF;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+    position: relative;
+}
+.line{
+    margin-top: 2px;
+    border-top: 1px solid black;
+}
+.name-tag{
+    color: aliceblue;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.photo{
+    width: 130px;
+    position: absolute;
+    left: 7%;
+    top: 45%;
+    border: 1px solid black;
+    box-shadow: 5px 5px 5px #00000095;
+}
+.link{
+    text-decoration: none;
+    color: inherit;
+}
+.contact-link{
+    text-decoration: underline;
+    font-weight: 600;
+}
+.contact{
+    display: block;
+    font-size: 12px;
+    word-break: break-all;
+    margin: 0px;
+}
+.heading{
+    text-transform: uppercase;
+    display: flex;
+    text-decoration: underline;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.education{
+    text-transform: uppercase;
+    display: flex;
+    text-decoration: underline;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+.content{
+    text-align: justify;
+    font-size: 12px;
+}
+.education-heading{
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-top: 10px;
+}
+.project-content{
+    display: block;
+    margin: 0px;
+    text-align: justify;
+}
+.resume1-photo{
+    width: 175px;
+    border-radius: 50%;
+}
+.resume1-heading{
+    text-transform: uppercase;
+    display: flex;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.resume1-name{
+    font-size: 28px;
+    font-weight: 500;
+    color: #32AFB2;
+    margin-bottom: 15px;
+}
+.resume1-education{
+    text-transform: uppercase;
+    display: flex;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+.resume1-education-heading{
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-top: 8px;
+}
+.resume3-cover{
+    background-color: #0D6784;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    text-align: center;
+    position: relative;
+}
+.resume3-photo{
+    width: 130px;
+    position: absolute;
+    left: 8%;
+    top: 35%;
+    border: 1px solid black;
+    box-shadow: 5px 5px 5px #00000095;
+}
+.resume3-heading{
+    text-transform: uppercase;
+    display: flex;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #0D6784;
+}
+.resume3-education{
+    text-transform: uppercase;
+    display: flex;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+.resume3-education-heading{
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-top: 10px;
+}
+.resume-design {
+    border-radius: 2px; 
+    padding: 10px;
+    text-align: center;
+}
+.resume-design img{
+    max-width: 150px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+}

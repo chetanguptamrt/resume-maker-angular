@@ -21,7 +21,7 @@
         <small *ngIf="skillAndCertificate.certificates.length==0" style="color: grey;">No certificates</small>
         <div *ngIf="skillAndCertificate.certificates.length!=0">
             <div *ngFor="let certificate of skillAndCertificate.certificates">
-                <mat-label><span style="font-weight: 500;">{{certificate.certificate}}</span></mat-label>
+                <mat-label><span style="font-weight: 400;">{{certificate.certificate}}</span></mat-label>
                 <mat-icon (click)="deleteCertificate(certificate)" aria-hidden="false" class="delete-item" aria-label="Example home icon">delete</mat-icon><br>
             </div>
         </div>
