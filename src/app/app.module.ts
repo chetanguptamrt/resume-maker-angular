@@ -16,6 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { ProfileComponent } from './component/profile/profile.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { PrintResumeComponent } from './component/print-resume/print-resume.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { PrintResumeComponent } from './component/print-resume/print-resume.comp
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, AppRoutingModule, MatToolbarModule, MatButtonModule, MatDividerModule,
-    MatExpansionModule, MatMenuModule, MatIconModule, MatSnackBarModule
+    MatExpansionModule, MatMenuModule, MatIconModule, MatSnackBarModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

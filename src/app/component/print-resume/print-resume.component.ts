@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { BasicDetailInterface, EducationInterface, ExperiencesInterface, PersonalInfoInterface, ProjectsInterface, SkillsAndCertificatesInterface, StrengthsAndHobbiesInterface } from 'src/app/interface/data-template';
+import { AllModelInterface, BasicDetailInterface, EducationInterface, ExperiencesInterface, PersonalInfoInterface, ProjectsInterface, SkillsAndCertificatesInterface, StrengthsAndHobbiesInterface } from 'src/app/interface/data-template';
 import { BasicdetailService } from 'src/app/services/basicdetail.service';
+import { StandardDownloadService } from 'src/app/services/standard-download.service';
 
 @Component({
   selector: 'app-print-resume',
@@ -21,10 +22,12 @@ export class PrintResumeComponent implements OnInit {
   skillAndCertificate:SkillsAndCertificatesInterface = {skills:[], certificates:[]}
   strengthAndHobbies: StrengthsAndHobbiesInterface = {hobbies:[], strengths:[]}
   show:boolean = false;
-
+  all!: AllModelInterface;
+  
   constructor(
     private basicDetailService: BasicdetailService,
-    private snack: MatSnackBar) {
+    private snack: MatSnackBar,
+    private standardDownload: StandardDownloadService) {
     let temp = this.basicDetailService.getBasicDetail();
     if (temp != null) {
       this.basicDetail = temp
@@ -74,10 +77,56 @@ export class PrintResumeComponent implements OnInit {
       if(tempSH!=null){
         this.strengthAndHobbies = tempSH
       }
+      this.all = {
+        profilePic: this.imagePath,
+        basicDetails: this.basicDetail,
+        personalInfo: this.personalInfo,
+        educationSchools: this.education.school,
+        educationColleges: this.education.college,
+        skills: this.skillAndCertificate.skills,
+        certificates: this.skillAndCertificate.certificates,
+        experiences: this.experiences.experiences,
+        strengthsAndHobbies: this.strengthAndHobbies,
+        projects: this.projects.projects,
+        declaration: this.declaration
+      }
     }
   }
 
   ngOnInit(): void {
+  }
+
+  pResumeDownload(n:number):void {
+    this.standardDownload.downlaod(this.all,n).subscribe(
+      (response:any)=>{
+        if(response.status==200) {
+          var blob = new Blob([this._base64ToArrayBuffer(response.content)], { type: "application/pdf" });				    
+          var url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.style.display = 'none';
+          a.href = url;
+          a.download = "resume.pdf";
+          document.body.appendChild(a);
+          a.click();
+          window.URL.revokeObjectURL(url);
+        } else {
+          alert("Something went wrong!!");
+        }
+      },
+      error=>{
+        alert("Something went wrong, please try again later!!");
+      }
+    )
+  }
+  
+  _base64ToArrayBuffer(base64:any) {
+    var binary_string = window.atob(base64);
+    var len = binary_string.length;
+    var bytes = new Uint8Array(len);
+    for (var i = 0; i < len; i++) {
+        bytes[i] = binary_string.charCodeAt(i);
+    }
+    return bytes.buffer;
   }
 
 }

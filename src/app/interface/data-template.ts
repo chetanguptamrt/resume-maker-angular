@@ -1,4 +1,4 @@
-;export interface BasicDetailInterface{
+export interface BasicDetailInterface{
   name:string;
   mobile:string;
   email:string;
@@ -68,4 +68,17 @@ export interface ProjectInterface{
 }
 export interface ProjectsInterface{
   projects: ProjectInterface[];
+}
+export interface AllModelInterface {
+  profilePic:string,
+  basicDetails: BasicDetailInterface,
+  personalInfo: PersonalInfoInterface,
+  educationSchools: EducationSchoolInterface[],
+  educationColleges: EducationCollegeInterface[],
+  skills: SkillInterface[],
+  certificates: CertificateInterface[],
+  experiences: ExperienceInterface[],
+  strengthsAndHobbies: StrengthsAndHobbiesInterface,
+  projects: ProjectInterface[],
+  declaration: string
 }

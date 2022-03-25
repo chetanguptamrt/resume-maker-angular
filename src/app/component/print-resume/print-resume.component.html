@@ -1,25 +1,36 @@
 <div class="container mb-3">
     <h2 class="mt-3 text-center">Choose Resume Template</h2>
+    <div class="text-center"><small>Please wait few second after click download button</small></div>
     <div class="row mt-3">
-        <div class="col-md-4 col-6 resume-design">
+        <div class="col-md-4 col-sm-6 col-12 resume-design">
             <img src="assets/img/resume1.png" alt="resume"> <br>
-            <button mat-raised-button color="accent" [disabled]="show" onclick="resumeDownload(1)">Download</button>
+            <button mat-raised-button color="accent" [disabled]="show" onclick="resumeDownload(1)">Simple</button> &nbsp;
+            <button mat-raised-button color="primary" [disabled]="show" (click)="pResumeDownload(1)">Standard</button>
         </div>
-        <div class="col-md-4 col-6 resume-design">
+        <div class="col-md-4 col-sm-6 col-12 resume-design">
             <img src="assets/img/resume2.png" alt="resume"> <br>
-            <button mat-raised-button color="accent" [disabled]="show" onclick="resumeDownload(2)">Download</button>
+            <button mat-raised-button color="accent" [disabled]="show" onclick="resumeDownload(2)">Simple</button> &nbsp;
+            <button mat-raised-button color="primary" [disabled]="show" (click)="pResumeDownload(2)">Standard</button>
         </div>
-        <div class="col-md-4 col-6 resume-design">
+        <div class="col-md-4 col-sm-6 col-12 resume-design">
             <img src="assets/img/resume3.png" alt="resume"> <br>
-            <button mat-raised-button color="accent" [disabled]="show" onclick="resumeDownload(3)">Download</button>
+            <button mat-raised-button color="accent" [disabled]="show" onclick="resumeDownload(3)">Simple</button> &nbsp;
+            <button mat-raised-button color="primary" [disabled]="show" (click)="pResumeDownload(3)">Standard</button>
         </div>
     </div>
+	<div class="text-justify mt-3 mb-3">
+		<label class="font-weigth-500" style="font-size-16">Note-</label>
+		<ul style="font-size-12">
+			<li>In simple mode, we are using JS library to generate Resume PDf.</li>
+			<li>In standard mode, we are using Java Serve to generate Resume PDf.</li>
+		</ul>
+	</div>
 </div>
 
 <div style="display: none;">
     
-    <div class="bootstrap-wrapper" id="resume1">
-        <div class="container">
+    <div class="bootstrap-wrapper">
+        <div class="container" id="resume1">
             <div class="row">
                 <div class="col-5 pt-2">
                     <div class="text-center mb-2">
@@ -174,8 +185,8 @@
         </div>
     </div>
 
-    <div class="bootstrap-wrapper" id="resume2">
-        <div class="container">
+    <div class="bootstrap-wrapper">
+        <div class="container" id="resume2">
             <div class="cover">
                 <h1 class="name-tag">{{basicDetail.name}}</h1>
                 <img class="photo" [src]="imagePath" alt="my photo">
@@ -349,8 +360,8 @@
         </div>
     </div>
 
-    <div class="bootstrap-wrapper" id="resume3">
-        <div class="container">
+    <div class="bootstrap-wrapper">
+        <div class="container" id="resume3">
             <div class="resume3-cover">
                 <h1 class="name-tag">{{basicDetail.name}}</h1>
                 <img class="resume3-photo" [src]="imagePath" alt="my photo">
